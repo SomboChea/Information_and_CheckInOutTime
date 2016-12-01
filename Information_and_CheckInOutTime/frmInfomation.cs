@@ -54,9 +54,14 @@ namespace Information_and_CheckInOutTime
             else
                 gender = "Other";
             string country = cbCountry.SelectedItem + "";
-            string rData = id + fullname + gender + dob + phone + country;
+            string[] rData = { id, fullname, gender, dob, phone, country };
             ListViewItem list = new ListViewItem(rData);
             listPeople.Items.Add(list);
+
+            txtFirstname.Text = "";
+            txtLastname.Text = "";
+            txtPhone.Text = "";
+            txtID.Text = "";
   
         }
 
@@ -79,6 +84,12 @@ namespace Information_and_CheckInOutTime
         private void cbMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
             createDay();
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem list in listPeople.SelectedItems)
+                listPeople.Items.Remove(list);
         }
     }
 }
