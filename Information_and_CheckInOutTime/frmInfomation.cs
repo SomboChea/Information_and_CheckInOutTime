@@ -91,5 +91,11 @@ namespace Information_and_CheckInOutTime
             foreach (ListViewItem list in listPeople.SelectedItems)
                 listPeople.Items.Remove(list);
         }
+
+        private void btnCheckInOut_Click(object sender, EventArgs e)
+        {
+            CheckInOut frmCheckInOut = new CheckInOut();
+            frmCheckInOut.ShowDialog();
+        }
     }
 }

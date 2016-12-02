@@ -16,7 +16,7 @@ namespace Information_and_CheckInOutTime
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CheckInOut());
+            Application.Run(new frmInfo());
         }
     }
 }

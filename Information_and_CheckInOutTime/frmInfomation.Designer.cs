@@ -55,6 +55,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.MaskedTextBox();
+            this.btnCheckInOut = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -83,7 +84,7 @@
             this.txtLastname.Location = new System.Drawing.Point(246, 95);
             this.txtLastname.Name = "txtLastname";
             this.txtLastname.Size = new System.Drawing.Size(270, 28);
-            this.txtLastname.TabIndex = 3;
+            this.txtLastname.TabIndex = 2;
             // 
             // label2
             // 
@@ -104,7 +105,7 @@
             this.groupBox1.Location = new System.Drawing.Point(95, 139);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(421, 107);
-            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gender";
             // 
@@ -159,7 +160,7 @@
             this.txtPhone.Mask = "+(999) 00-000-0000";
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(270, 28);
-            this.txtPhone.TabIndex = 6;
+            this.txtPhone.TabIndex = 5;
             // 
             // label4
             // 
@@ -187,7 +188,7 @@
             this.cbCountry.Location = new System.Drawing.Point(249, 416);
             this.cbCountry.Name = "cbCountry";
             this.cbCountry.Size = new System.Drawing.Size(267, 30);
-            this.cbCountry.TabIndex = 8;
+            this.cbCountry.TabIndex = 6;
             // 
             // listPeople
             // 
@@ -242,7 +243,7 @@
             this.btnAdd.Location = new System.Drawing.Point(562, 357);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(86, 33);
-            this.btnAdd.TabIndex = 10;
+            this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -267,7 +268,7 @@
             this.cbYear.Location = new System.Drawing.Point(314, 47);
             this.cbYear.Name = "cbYear";
             this.cbYear.Size = new System.Drawing.Size(101, 33);
-            this.cbYear.TabIndex = 12;
+            this.cbYear.TabIndex = 2;
             this.cbYear.SelectedIndexChanged += new System.EventHandler(this.cbYear_SelectedIndexChanged);
             // 
             // cbMonth
@@ -292,7 +293,7 @@
             this.cbMonth.Location = new System.Drawing.Point(85, 47);
             this.cbMonth.Name = "cbMonth";
             this.cbMonth.Size = new System.Drawing.Size(223, 33);
-            this.cbMonth.TabIndex = 13;
+            this.cbMonth.TabIndex = 1;
             this.cbMonth.SelectedIndexChanged += new System.EventHandler(this.cbMonth_SelectedIndexChanged);
             // 
             // cbDay
@@ -304,7 +305,7 @@
             this.cbDay.Location = new System.Drawing.Point(6, 47);
             this.cbDay.Name = "cbDay";
             this.cbDay.Size = new System.Drawing.Size(73, 33);
-            this.cbDay.TabIndex = 14;
+            this.cbDay.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -315,7 +316,7 @@
             this.groupBox2.Location = new System.Drawing.Point(95, 250);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(421, 107);
-            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Date of Birth";
             // 
@@ -337,14 +338,26 @@
             this.txtID.Name = "txtID";
             this.txtID.PromptChar = '#';
             this.txtID.Size = new System.Drawing.Size(118, 28);
-            this.txtID.TabIndex = 14;
+            this.txtID.TabIndex = 0;
             this.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnCheckInOut
+            // 
+            this.btnCheckInOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckInOut.Location = new System.Drawing.Point(779, 156);
+            this.btnCheckInOut.Name = "btnCheckInOut";
+            this.btnCheckInOut.Size = new System.Drawing.Size(329, 118);
+            this.btnCheckInOut.TabIndex = 13;
+            this.btnCheckInOut.Text = "Check In-Out";
+            this.btnCheckInOut.UseVisualStyleBackColor = true;
+            this.btnCheckInOut.Click += new System.EventHandler(this.btnCheckInOut_Click);
             // 
             // frmInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1232, 733);
+            this.Controls.Add(this.btnCheckInOut);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox2);
@@ -400,6 +413,7 @@
         private System.Windows.Forms.ColumnHeader cID;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox txtID;
+        private System.Windows.Forms.Button btnCheckInOut;
     }
 }
 
