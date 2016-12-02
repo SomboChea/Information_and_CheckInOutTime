@@ -31,13 +31,14 @@ namespace Information_and_CheckInOutTime
         {
             txtRes.Text = "";
             txtCheckOut.Text = "";
-            string currentDate = DateTime.Now.ToString("dd/MM/yyyy HH\\:mm\\:ss");
+            string currentDate = DateTime.Now.ToString("dd/MM/yyyy  HH\\:mm\\:ss");
             txtCheckIn.Text = currentDate;
             end = DateTime.Now;
             t = end.Subtract(start);
 
             btnCheckOut.Enabled = true;
             btnCheckIn.Enabled = false;
+            btnPrint.Enabled = false;
         }
 
         private void btnCheckOut_Click(object sender, EventArgs e)
@@ -46,9 +47,10 @@ namespace Information_and_CheckInOutTime
             int hour = t.Hours * 60;
             int mn = t.Minutes;
             int totalMin = day + hour + mn;
+            int myMin = 0;
 
             txtRes.Text = "";
-            string currentDate = DateTime.Now.ToString("dd/MM/yyyy HH\\:mm\\:ss");
+            string currentDate = DateTime.Now.ToString("dd/MM/yyyy  HH\\:mm\\:ss");
             txtCheckOut.Text = currentDate;
 
             btnCheckOut.Enabled = false;
@@ -62,24 +64,32 @@ namespace Information_and_CheckInOutTime
 
             if (totalMin > 120)
             {
-                int myMin = totalMin-120;
+                myMin = totalMin-120;
+                int count = 0;
                 if (myMin <= 30)
                 {
                     pay = 1000;
                 } else
                 {
-                    pay = 1000*2;
+                    for(int i = myMin; i >= 1; i -= 30)
+                    {
+                        count++;
+                    }
+                    pay = count * 1000;
                 }
                
             }
 
             //MessageBox.Show("" + totalMin);
 
-            res = "Start date : " + start.ToString("dd/MM/yyyy HH\\:mm\\:ss") 
-                + System.Environment.NewLine + "End date : " + end.ToString("dd/MM/yyyy HH\\:mm\\:ss") 
-                + System.Environment.NewLine + "Usage Time : " + t.Days + "d : " + t.Hours + "h : " + t.Minutes + "m"  
-                + System.Environment.NewLine + "----------------------------------------------" 
-                + System.Environment.NewLine + "Your Pay : " + pay;
+            res = " Start date : " + start.ToString("dd/MM/yyyy  HH\\:mm\\:ss")
+                + System.Environment.NewLine + " End date : " + end.ToString("dd/MM/yyyy  HH\\:mm\\:ss")
+                + System.Environment.NewLine + "--------------------------------------------------------"
+                + System.Environment.NewLine + " Usage Time : " + t.Days + "d : " + t.Hours + "h : " + t.Minutes + "m"
+                + System.Environment.NewLine + " Free 2 hours. (2*60 = 120mn)"
+                + System.Environment.NewLine + " Amount of Paid : " + min2Hour(myMin)
+                + System.Environment.NewLine + "--------------------------------------------------------"
+                + System.Environment.NewLine + "      Total Paid : " + pay + " Riel";
             txtRes.AppendText(res);
         }
 
@@ -108,5 +118,20 @@ namespace Information_and_CheckInOutTime
                 document.Print();
             }
         }
+
+        private string min2Hour(int mn)
+        {
+            int rMN = 0, rH = 0;
+            for(int i = mn; i >= 1; i -= 60)
+            {
+                if (i >= 60)
+                    rH++;
+                else
+                    rMN = i;
+            }
+            string HourMin = rH + "h : " + rMN + "mn"; 
+            return HourMin;
+        }
+
     }
 }
