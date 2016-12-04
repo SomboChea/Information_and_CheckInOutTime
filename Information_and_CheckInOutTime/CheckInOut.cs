@@ -19,7 +19,7 @@ namespace Information_and_CheckInOutTime
             document.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
         }
 
-        private DateTime start = DateTime.Now;
+        private DateTime start;
         private DateTime end;
         private TimeSpan t;
         private string res = "";
@@ -29,12 +29,11 @@ namespace Information_and_CheckInOutTime
 
         private void btnCheckIn_Click(object sender, EventArgs e)
         {
+            start = DateTime.Now;
             txtRes.Text = "";
             txtCheckOut.Text = "";
             string currentDate = DateTime.Now.ToString("dd/MM/yyyy  HH\\:mm\\:ss");
             txtCheckIn.Text = currentDate;
-            end = DateTime.Now;
-            t = end.Subtract(start);
 
             btnCheckOut.Enabled = true;
             btnCheckIn.Enabled = false;
@@ -43,6 +42,8 @@ namespace Information_and_CheckInOutTime
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
+            end = DateTime.Now;
+            t = end.Subtract(start);
             int day = (t.Days * 24) * 60;
             int hour = t.Hours * 60;
             int mn = t.Minutes;
@@ -87,6 +88,7 @@ namespace Information_and_CheckInOutTime
                 + System.Environment.NewLine + "--------------------------------------------------------"
                 + System.Environment.NewLine + " Usage Time : " + t.Days + "d : " + t.Hours + "h : " + t.Minutes + "m"
                 + System.Environment.NewLine + " Free 2 hours. (2*60 = 120mn)"
+                + System.Environment.NewLine + " Note* : 1mn -> 30mn = 1000 Riel"
                 + System.Environment.NewLine + " Amount of Paid : " + min2Hour(myMin)
                 + System.Environment.NewLine + "--------------------------------------------------------"
                 + System.Environment.NewLine + "      Total Paid : " + pay + " Riel";

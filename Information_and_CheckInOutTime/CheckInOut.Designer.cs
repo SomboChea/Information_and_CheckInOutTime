@@ -48,9 +48,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(45, 79);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 25);
+            this.label1.Size = new System.Drawing.Size(96, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Start Time";
+            this.label1.Text = "Start date";
             // 
             // label2
             // 
@@ -58,9 +58,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(45, 138);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 25);
+            this.label2.Size = new System.Drawing.Size(96, 25);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Stop Time";
+            this.label2.Text = "Stop date";
             // 
             // txtCheckIn
             // 
@@ -105,12 +105,14 @@
             // 
             // txtRes
             // 
+            this.txtRes.BackColor = System.Drawing.Color.DimGray;
             this.txtRes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRes.Location = new System.Drawing.Point(50, 205);
+            this.txtRes.ForeColor = System.Drawing.Color.White;
+            this.txtRes.Location = new System.Drawing.Point(50, 200);
             this.txtRes.Multiline = true;
             this.txtRes.Name = "txtRes";
             this.txtRes.ReadOnly = true;
-            this.txtRes.Size = new System.Drawing.Size(487, 226);
+            this.txtRes.Size = new System.Drawing.Size(487, 250);
             this.txtRes.TabIndex = 6;
             // 
             // lbTimer
@@ -133,21 +135,23 @@
             // 
             // btnPrint
             // 
+            this.btnPrint.BackColor = System.Drawing.Color.Gray;
             this.btnPrint.Enabled = false;
             this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.Location = new System.Drawing.Point(543, 297);
+            this.btnPrint.ForeColor = System.Drawing.Color.White;
+            this.btnPrint.Location = new System.Drawing.Point(543, 200);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(88, 38);
+            this.btnPrint.Size = new System.Drawing.Size(88, 250);
             this.btnPrint.TabIndex = 8;
             this.btnPrint.Text = "Print";
-            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // CheckInOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 443);
+            this.ClientSize = new System.Drawing.Size(643, 462);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.lbTimer);
             this.Controls.Add(this.txtRes);
@@ -157,7 +161,9 @@
             this.Controls.Add(this.txtCheckIn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "CheckInOut";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CheckIn & CheckOut";
             this.Load += new System.EventHandler(this.CheckInOut_Load);
             this.ResumeLayout(false);
